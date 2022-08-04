@@ -1,32 +1,15 @@
 def palindrome(s):
     return s==str(s[ ::-1])
 
-string=palindrome(s)
-if string:
-    return True
-else:
-    return False
 
 
 
-
-
+from string import ascii_lowercase
 def panagram(s):
-    s=s.lower()
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    b=sorted(set(s))
-    b = "".join(b)
-    b = b.strip()
-    if alphabet==b:
-        return True
-    else:
-        return False
-panagram("ABCDEFGHIJKLMNOPQRSTUVWXYZ")      
-panagram("hello HOW are u")
-panagram("abcdefghijklmnopqrstuvwxyz")
-panagram("aabbbabcdefghijklmnopqrstuvwxyz")
-
-
+    for letter in ascii_lowercase:
+        if letter not in s.lower():
+            return False
+    return True
 
 
 
@@ -54,4 +37,10 @@ def freq(s):
         else:
             dict[i]+=1
     return dict
-freq("happy")
+
+
+if __name__ == '__main__':
+    print(panagram("gopika"))
+    print(palindrome("python"))
+    print(prime(3))
+    print(freq("happy"))
